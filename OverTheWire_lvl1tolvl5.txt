@@ -1,0 +1,148 @@
+Over the wire notes
+
+level 0 -> lvl 1
+
+lvl 1 Unix commands
+https://kb.iu.edu/d/afsk
+
+ls - list the files stored in a directory, 
+
+cd - changes your current directory location, 
+
+cat - outputs the contents of a text file. You can use it to read brief files or to concatenate files together., 
+
+file -  for recognizing the type of data contained in a computer file.,
+
+du - reports disk usage, 
+
+find
+
+
+bandit0@bandit:~$ cat readme
+
+boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+
+lvl 1 -> lvl 2
+bandit1@bandit:~$ ls
+-
+
+bandit1@bandit:~$ file -
+
+/dev/stdin: very short file (no magic)
+
+https://unix.stackexchange.com/questions/16357/usage-of-dash-in-place-of-a-filename
+bandit1@bandit:~$ cat ./-
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+
+lvl 2 -> lvl 3
+bandit2@bandit:~$ ls
+spaces in this filename
+bandit2@bandit:~$ cat spaces\ in\ this\ filename
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+
+
+lvl 3 -> lvl 4
+bandit3@bandit:~$ ls
+inhere
+bandit3@bandit:~$ cd inhere/
+bandit3@bandit:~/inhere$
+bandit3@bandit:~/inhere$ ls
+bandit3@bandit:~/inhere$
+bandit3@bandit:~/inhere$ find
+.
+./.hidden
+bandit3@bandit:~/inhere$ cat ./.hidden
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+
+
+lvl 4 -> lvl 5
+bandit4@bandit:~$ ls
+inhere
+bandit4@bandit:~$ cd inhere/
+bandit4@bandit:~/inhere$ ls
+-file00  -file02  -file04  -file06  -file08
+-file01  -file03  -file05  -file07  -file09
+bandit4@bandit:~/inhere$ file ./-file00
+./-file00: data
+bandit4@bandit:~/inhere$ file ./-file01
+./-file01: data
+bandit4@bandit:~/inhere$ file ./-file02
+./-file02: data
+bandit4@bandit:~/inhere$ file ./-file03
+./-file03: data
+bandit4@bandit:~/inhere$ file ./-file04
+./-file04: data
+bandit4@bandit:~/inhere$ file ./-file05
+./-file05: data
+bandit4@bandit:~/inhere$ file ./-file06
+./-file06: data
+bandit4@bandit:~/inhere$ file ./-file07
+./-file07: ASCII text
+bandit4@bandit:~/inhere$ cat ./-file07
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+
+
+lvl 5 -> lvl 6
+1033 bytes in size
+bandit5@bandit:~$ ls
+inhere
+bandit5@bandit:~$ cd inhere/
+bandit5@bandit:~/inhere$ ls
+maybehere00  maybehere04  maybehere08  maybehere12  maybehere16
+maybehere01  maybehere05  maybehere09  maybehere13  maybehere17
+maybehere02  maybehere06  maybehere10  maybehere14  maybehere18
+maybehere03  maybehere07  maybehere11  maybehere15  maybehere19
+
+find -size +1000c -size -1040c
+bandit5@bandit:~/inhere$ find -size +1000c -size -1040c
+./maybehere12/.file3
+./maybehere00/-file1
+./maybehere07/.file2
+./maybehere07/spaces file3
+
+find . -type f -executable -print -size +1030c -size -1035c
+
+find . -size 1033c ! -executable
+bandit5@bandit:~/inhere$ find . -size 1033c ! -executable
+./maybehere07/.file2
+bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
